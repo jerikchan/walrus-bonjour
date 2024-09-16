@@ -161,7 +161,7 @@ export default function About() {
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://bonjour.walrus.site'
   const username = form.getValues().username
   const avatarUrl = form.getValues().avatar
-  const liveLink = username ? `${siteUrl}/${username}` : ''
+  const liveLink = username ? `${siteUrl}/${username}.html` : ''
   const hasRegister = !!currentAccount
 
   function onSubmit(values: z.infer<typeof formSchema>) {
@@ -201,7 +201,7 @@ export default function About() {
 
   useEffect(() => {
     if (currentAccount) {
-      form.setValue('username', 'ericchan')
+      form.setValue('username', 'eric')
       form.setValue('title', `I'm Eric, a digital nomad, freelancer, and front-end developer.`)
       form.setValue('description', `I have over two years of experience as a digital nomad, having lived and worked remotely in places like Dali, Yunnan, China, Bali, Indonesia, and Thailand, traveling while working on various remote projects. Throughout my career, I have primarily worked as a front-end engineer, taking on development tasks within companies. I've contributed to projects like no-code SaaS applications, web and cross-platform component libraries, rich text editors, large file upload tools, private npm systems, and automated operation and maintenance deployment systems.`)
       form.setValue('x_link', 'https://x.com/duebass21')
